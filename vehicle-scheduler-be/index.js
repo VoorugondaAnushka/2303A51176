@@ -1,15 +1,15 @@
-function knapsack(tasks, maxHours) {
+function solveVehicleScheduling(tasks, mechanicHours) {
   const n = tasks.length;
 
   const dp = Array(n + 1)
-    .fill()
-    .map(() => Array(maxHours + 1).fill(0));
+    .fill(null)
+    .map(() => Array(mechanicHours + 1).fill(0));
 
   for (let i = 1; i <= n; i++) {
     const duration = tasks[i - 1].Duration;
     const impact = tasks[i - 1].Impact;
 
-    for (let h = 0; h <= maxHours; h++) {
+    for (let h = 0; h <= mechanicHours; h++) {
       if (duration <= h) {
         dp[i][h] = Math.max(
           dp[i - 1][h],
@@ -21,5 +21,7 @@ function knapsack(tasks, maxHours) {
     }
   }
 
-  return dp[n][maxHours];
+  return dp[n][mechanicHours];
 }
+
+module.exports = solveVehicleScheduling;
