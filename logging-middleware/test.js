@@ -1,9 +1,17 @@
 const Log = require("./logger");
 
-Log(
-  "backend",
-  "info",
-  "service",
-  "Logger test message",
-  "YOUR_ACCESS_TOKEN"
-);
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiYXVkIjoiaHR0cDovLzIwLjI0NC41Ni4xNDQvZXZhbHVhdGlvbi1zZXJ2aWNlIiwiZW1haWwiOiJhbnVzaGthdm9vcnVnb25kYTA1QGdtYWlsLmNvbSIsImV4cCI6MTc4MTc2OTQwMSwiaWF0IjoxNzgxNzY4NTAxLCJpc3MiOiJBZmZvcmQgTWVkaWNhbCBUZWNobm9sb2dpZXMgUHJpdmF0ZSBMaW1pdGVkIiwianRpIjoiNjdjZWUwOWItZDM4My00ZDdmLWE3OGItZjQzMDJmNTg2OTUzIiwibG9jYWxlIjoiZW4tSU4iLCJuYW1lIjoidm9vcnVnb25kYSBhbnVzaGthIiwic3ViIjoiMWRiODQyM2QtOTA2Zi00ODU0LThkMzktM2ZiYTY3Njg1MDZkIn0sImVtYWlsIjoiYW51c2hrYXZvb3J1Z29uZGEwNUBnbWFpbC5jb20iLCJuYW1lIjoidm9vcnVnb25kYSBhbnVzaGthIiwicm9sbE5vIjoiMjMwM2E1MTE3NiIsImFjY2Vzc0NvZGUiOiJiRHJlQXEiLCJjbGllbnRJRCI6IjFkYjg0MjNkLTkwNmYtNDg1NC04ZDM5LTNmYmE2NzY4NTA2ZCIsImNsaWVudFNlY3JldCI6ImV2c2NUaGhNS1ZkeFBlZVIifQ.aTx2CgaFbs9ddJuhbr0YXizdjhbQT7CPYQUc7ZExsy8";
+
+async function test() {
+  const result = await Log(
+    "backend",
+    "info",
+    "service",
+    "Logger test message",
+    token
+  );
+
+  console.log(result);
+}
+
+test();
